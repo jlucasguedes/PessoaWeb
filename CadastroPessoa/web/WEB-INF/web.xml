@@ -4,9 +4,47 @@
         <servlet-name>PessoaServlet</servlet-name>
         <servlet-class>br.com.senacrs.servlet.PessoaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>br.com.senacrs.controller.Controller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Página de Cadastro de Pessoa</servlet-name>
+        <jsp-file>/cadastro/cadPessoa.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Página de edição de Pessoa</servlet-name>
+        <jsp-file>/edicao/editPessoa.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Página de Listagem de Pessoa</servlet-name>
+        <jsp-file>/listagem/listaPessoa.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PessoaServlet</servlet-name>
         <url-pattern>/PessoaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/Controller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Página de Cadastro de Pessoa</servlet-name>
+        <url-pattern>/cadPessoa</url-pattern>
+        <url-pattern>/cadastro_pessoa</url-pattern>
+        <url-pattern>/pessoaCad</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Página de edição de Pessoa</servlet-name>
+        <url-pattern>/pessoaEdit</url-pattern>
+        <url-pattern>/editar_pessoa</url-pattern>
+        <url-pattern>/editPessoa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Página de Listagem de Pessoa</servlet-name>
+        <url-pattern>/listaPessoa</url-pattern>
+        <url-pattern>/pessoaLista</url-pattern>
+        <url-pattern>/listar_pessoa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
