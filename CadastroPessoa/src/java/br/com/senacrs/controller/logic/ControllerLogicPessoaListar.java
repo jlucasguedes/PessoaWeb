@@ -5,7 +5,6 @@
  */
 package br.com.senacrs.controller.logic;
 
-import br.com.senacrs.bean.Pessoa;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

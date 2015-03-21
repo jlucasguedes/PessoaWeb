@@ -5,8 +5,10 @@
  */
 package br.com.senacrs.controller;
 
+import br.com.senacrs.controller.logic.ControllerLogic;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,8 +31,17 @@ public class Controller extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Controlador que receberá todas as requisições
-        
+        try {
+
+            //Controlador que receberá todas as requisições
+            Class classe = Class.forName("br.com.senacrs.controller.logic." + request.getParameter("acao"));
+            ControllerLogic controller = (ControllerLogic) classe.newInstance();
+            
+            controller.executar(request, response);
+
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
