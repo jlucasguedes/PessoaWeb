@@ -1,6 +1,7 @@
-<jsp:include page="../template/header.jsp" />
+<jsp:include page="template/header.jsp" />
 <jsp:useBean id="pessoa" scope="session" class="br.com.senacrs.bean.Pessoa" />
-        <form name="formulario" action="PessoaServlet" method="POST">
+        <h2><a href="/CadastroPessoa/">Voltar para o MENU</a></h2>
+        <form name="formulario" action="${pageContext.request.contextPath}/Controller?acao=ControllerLogicPessoaEditar" method="POST">
             <table>
                 <thead>
                     <tr>
@@ -35,4 +36,4 @@
                 </tbody>
             </table>
         </form>
-<jsp:include page="../template/footer.jsp" />
+<jsp:include page="template/footer.jsp" />

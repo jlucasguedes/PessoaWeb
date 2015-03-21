@@ -40,7 +40,7 @@ public class Controller extends HttpServlet {
             controller.executar(request, response);
 
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
-            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);            
         }
     }
 

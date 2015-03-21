@@ -1,18 +1,7 @@
-<%-- 
-    Document   : index
-    Created on : 21/03/2015, 00:02:24
-    Author     : lucas
---%>
-
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<jsp:include page="template/header.jsp" />
+        <h1> Menu Pessoa </h1>
+        <%-- Cadastrar, Editar Excluir e Listar --%>
+        <h2><a href="${pageContext.request.contextPath}/Controller?acao=ControllerLogicRedirecionamento&page=cadPessoa">Cadastrar</a></h2>
+        <h2><a href="${pageContext.request.contextPath}/Controller?acao=ControllerLogicRedirecionamento&page=editPessoa">Editar</a></h2>
+        <h2><a href="${pageContext.request.contextPath}/Controller?acao=ControllerLogicRedirecionamento&page=listaPessoa">Listar</a></h2>
+<jsp:include page="template/footer.jsp" />

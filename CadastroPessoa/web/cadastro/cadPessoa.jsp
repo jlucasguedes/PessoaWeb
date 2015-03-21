@@ -1,5 +1,6 @@
-<jsp:include page="../template/header.jsp" />
-        <form name="formulario" action="PessoaServlet" method="POST">
+<jsp:include page="/template/header.jsp" />
+        <h2><a href="/CadastroPessoa/">Voltar para o MENU</a></h2>
+        <form name="formulario" action="/CadastroPessoa/Controller?acao=ControllerLogicPessoaCadastrar" method="POST">
             <table>
                 <thead>
                     <tr>
@@ -34,4 +35,4 @@
                 </tbody>
             </table>
         </form>
-<jsp:include page="../template/footer.jsp" />
+<jsp:include page="/template/footer.jsp" />
