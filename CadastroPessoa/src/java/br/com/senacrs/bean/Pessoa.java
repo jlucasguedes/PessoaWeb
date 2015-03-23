@@ -10,6 +10,7 @@ package br.com.senacrs.bean;
  * @author lucas
  */
 public class Pessoa {
+    private int id;
     private String nome;
     private String sobreNome;
     
@@ -19,7 +20,15 @@ public class Pessoa {
         this.nome = "";
         this.endereco = new Endereco();
     }
+    
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -43,8 +52,5 @@ public class Pessoa {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-    
-    
-    
-    
+
 }

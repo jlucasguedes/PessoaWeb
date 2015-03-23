@@ -1,14 +1,18 @@
 <jsp:include page="template/header.jsp" />
-<jsp:useBean id="pessoa" scope="session" class="br.com.senacrs.bean.Pessoa" />
+<jsp:useBean id="pessoa" scope="request" class="br.com.senacrs.bean.Pessoa" />
         <h2><a href="/CadastroPessoa/">Voltar para o MENU</a></h2>
         <form name="formulario" action="${pageContext.request.contextPath}/Controller?acao=ControllerLogicPessoaEditar" method="POST">
             <table>
                 <thead>
                     <tr>
-                        <th colspan="2"> Alteração no cadastro de Pessoa </th>
+                        <th colspan="2"> Alteração no cadastro da Pessoa com id = ${pessoa.id}</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td><label for="id">ID:</label></td>
+                        <td><input type="text" name="id" value="${pessoa.id}" size="50" id="id" readonly="readonly"/></td>
+                    </tr>
                     <tr>
                         <td><label for="nome">Nome:</label></td>
                         <td><input type="text" name="nome" value="${pessoa.nome}" size="50" id="nome" /></td>

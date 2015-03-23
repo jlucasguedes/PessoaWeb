@@ -6,6 +6,8 @@
 package br.com.senacrs.controller.logic;
 
 import br.com.senacrs.bean.Pessoa;
+import br.com.senacrs.dao.PessoaDAO;
+import br.com.senacrs.util.DAOFactory;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -31,7 +33,9 @@ public class ControllerLogicPessoaCadastrar implements ControllerLogic {
         pessoa.getEndereco().setBairro(request.getParameter("bairro"));
         pessoa.getEndereco().setCep(request.getParameter("cep"));
 
-        request.getSession().setAttribute("pessoa", pessoa);
+        PessoaDAO pessoaDAO = DAOFactory.getPessoaDAO();
+        
+        pessoaDAO.inserir(pessoa);
 
         request.getRequestDispatcher("index.jsp").forward(request, response);
 

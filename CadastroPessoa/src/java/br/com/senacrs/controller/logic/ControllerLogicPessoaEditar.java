@@ -6,6 +6,8 @@
 package br.com.senacrs.controller.logic;
 
 import br.com.senacrs.bean.Pessoa;
+import br.com.senacrs.dao.PessoaDAO;
+import br.com.senacrs.util.DAOFactory;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -25,15 +27,18 @@ public class ControllerLogicPessoaEditar implements ControllerLogic {
 
         Pessoa pessoa = new Pessoa();
 
+        pessoa.setId(Integer.parseInt(request.getParameter("id")));
         pessoa.setNome(request.getParameter("nome"));
         pessoa.setSobreNome(request.getParameter("sobrenome"));
         pessoa.getEndereco().setRua(request.getParameter("rua"));
         pessoa.getEndereco().setBairro(request.getParameter("bairro"));
         pessoa.getEndereco().setCep(request.getParameter("cep"));
 
-        request.getSession().setAttribute("pessoa", pessoa);
-
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        PessoaDAO pessoaDAO = DAOFactory.getPessoaDAO();
+        
+        pessoaDAO.editar(pessoa);
+        
+        request.getRequestDispatcher("/Controller?acao=ControllerLogicPessoaListar").forward(request, response);
         
     }
 

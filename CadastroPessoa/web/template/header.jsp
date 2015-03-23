@@ -10,5 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP, JDBC e DAO</title>
+        <style>
+            a { font-weight: bold; text-decoration: none; color: blue;}
+        </style>
     </head>
     <body>

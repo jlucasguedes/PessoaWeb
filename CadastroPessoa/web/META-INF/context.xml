@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/CadastroPessoa"/>
+<Context antiJARLocking="true" path="/CadastroPessoa">
+    <Resource name="jdbc/pessoaweb"
+              auth="Container"
+              scope="Shareable"
+              type="javax.sql.DataSource"                   
+              username="postgres"
+              password="lucas123"        
+              driverClassName="org.postgresql.Driver"
+              url="jdbc:postgresql://localhost:5432/PESSOAWEB"                            
+              maxActive="100"
+              maxIdle="30"
+              maxWait="10000"
+    />
+</Context>
